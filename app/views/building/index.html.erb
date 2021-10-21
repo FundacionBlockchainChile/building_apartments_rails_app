@@ -1,0 +1,9 @@
+<h1>Building#index</h1>
+<p>Find me in app/views/building/index.html.erb</p>
+
+<h1>Lista de Edificios</h1>
+<ul>
+  <% @buildings.each do |building| %>
+    <li><%= "El Edificio nombre #{building.nombre_edificio} direccion #{building.direccion} de la ciudad de #{building.ciudad}"   %></li>
+  <% end %>
+</ul>

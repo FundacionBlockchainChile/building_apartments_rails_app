@@ -1,0 +1,15 @@
+<%# <h1>Building#new</h1>
+<p>Find me in app/views/building/new.html.erb</p> %>
+
+<h1>Creando un nuevo edificio</h1>
+<%= form_for(@building , :url => building_create_path , :method => "post") do |f| %>
+<%= f.label :nombre_edificio %>
+<%= f.text_field :nombre_edificio %>
+<br>
+<%= f.label :direccion %>
+<%= f.text_field :direccion %>
+<br>
+<%= f.label :ciudad %>
+<%= f.text_field :ciudad %>
+<%= f.submit "Crear Edificio" %>
+<% end %>
