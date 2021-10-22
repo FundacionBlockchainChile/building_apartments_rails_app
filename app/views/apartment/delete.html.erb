@@ -1,2 +1,13 @@
-<h1>Apartment#delete</h1>
-<p>Find me in app/views/apartment/delete.html.erb</p>
+<h1>BORRAR DEPARTAMENTO</h1>
+
+<h3>¿Estas seguro que deseas borrar el registro?</h3>
+<button type="button"><%= link_to  "volver", apartments_path %></button>
+<%= form_for(@apartment, :method=>"delete") do |f| %>
+<P><%= @apartment.numero_de_departamento %></p>
+<P><%= @apartment.building_id %></p>
+<button type="button" class="btn btn-danger">BORRAR DEPARTAMENTO<% f.submit "BORRAR DEPARTAMENTO"%></button>
+<%end%>
+
+<br>
+<%= link_to "Back", :back %>
+<br>

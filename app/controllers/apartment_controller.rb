@@ -1,13 +1,19 @@
 class ApartmentController < ApplicationController
   def index
-     @apartment = Apartment.all
+     @apartments = Apartment.all
   end
 
   def show
+    @apartment = Apartment.where(building_id: @building.id)
   end
 
   def new
     @apartment = Apartment.new
+    @buildings = Building.all
+  end
+
+  def show
+    @apartment = Apartment.find(params[:id])
   end
 
   def create
@@ -26,14 +32,15 @@ class ApartmentController < ApplicationController
   end
   
   def edit
+     @apartment = Apartment.find(params[:id])
   end
   
   def delete
+    @apartment = Apartment.find(params[:id])
+    @apartment.destroy
+    redirect_to "/apartments/index"
   end
-  
-  def destroy
-  end
-
+ 
   private
   def apartment_params
     params.require(:apartment).permit(:numero_depto, :building_id)

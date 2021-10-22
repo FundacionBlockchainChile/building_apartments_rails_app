@@ -1,11 +1,17 @@
-<h1>Building#show</h1>
-<p>Find me in app/views/building/show.html.erb</p>
+
 
 <h1>Informacion del Edificio</h1>
+
 <h2><%= @building.nombre_edificio %></h2>
 <p><%= @building.direccion %></p>
 <p><%= @building.ciudad %></p>
-<h3>Informacion de departamentos</h3>
-<% @apartment.each do |apartment| %>
+
+<h3>Informacion de departamentos del Edificio</h3>
+
+<% @apartments.each do |apartment| %>
   <p><%= apartment.numero_depto%>
 <% end %>
+
+<br>
+<%= link_to "Back", :back %>
+<br>

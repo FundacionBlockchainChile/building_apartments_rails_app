@@ -1,2 +1,11 @@
-<h1>Apartment#show</h1>
-<p>Find me in app/views/apartment/show.html.erb</p>
+<h1>Apartment Info</h1>
+
+<div>
+<li>El numero del Depto es <%= @apartment.numero_depto %>, y su Building ID es <%= @apartment.building_id %>
+</div>
+<%= link_to "Back", :back %>
+<%= link_to "Buildings", "/buildings/index" %>
+
+<br>
+<%= link_to "Back", :back %>
+<br>

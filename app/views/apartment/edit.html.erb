@@ -1,8 +1,3 @@
-<h1>Apartment#edit</h1>
-<p>Find me in app/views/apartment/edit.html.erb</p>
-
-<% link_to "Regresar al Inicio", apartments_index%>
-
 <h1>Edit your Apartment</h1>
 
 <%= form_for(@apartment , :url => apartments_create_path , :method => "post") do |f| %>
@@ -14,3 +9,7 @@
 <br>
 <%= f.submit "Crear Apartment" %>
 <% end %>
+
+<br>
+<%= link_to "Back", :back %>
+<br>

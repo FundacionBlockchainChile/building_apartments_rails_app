@@ -4,8 +4,8 @@ class BuildingController < ApplicationController
   end
 
   def show
-    @building = Building.new(building_params())
-    p @building
+    @building = Building.find(params[:id])
+    @apartments = Apartment.select('*').joins(:building).where("building_id = #{@building.id}")
   end
 
   def new
@@ -32,20 +32,23 @@ class BuildingController < ApplicationController
   
   def edit
     @building = Building.new(building_params())
+    p @building
+    render :json => @building
   end
   
   def delete
+    @building = Building.find(params[:id])
+    @building.destroy
+    redirect_to "/buildings/index"
   end
   
   def destroy
-    # @building = Building.find(params[:id])
-    # @building.destroy
-    # redirect_to(buildings_index)
+    
   end
 
   private
   def building_params
-    params.require(:building).permit(:nombre_edificio, :direccion , :ciudad)
+    return params.require(:building).permit(:id, :nombre_edificio, :direccion , :ciudad)
   end
 
 

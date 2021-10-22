@@ -2,19 +2,24 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Nombre Edificio</th>
     <th>Direccion</th>
     <th>Ciudad</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
   <% @buildings.each do |building| %>
     <tr>
+      <td><%= building.id %></td>
       <td><%= building.nombre_edificio %></td>
       <td><%= building.direccion %></td>
       <td><%= building.ciudad %></td>
       <td><%= link_to "Editar", buildings_edit_path(building) %></td>
+      <td><%= link_to "Delete", "/buildings/#{building.id}", :method => "delete" %></td>
+      <td><%= link_to "Ver Deptos", "/buildings/show/#{building.id}" %></td>
     </tr>
   <% end %>
 </table>
 
-  <%= link_to "Crear nuevo Edificio", buildings_new_path %>
-  <%= link_to "Back", :back %>
