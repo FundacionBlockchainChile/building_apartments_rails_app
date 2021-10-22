@@ -1,2 +1,17 @@
-<h1>Building#edit</h1>
-<p>Find me in app/views/building/edit.html.erb</p>
+<%# <h1>Building#edit</h1>
+<p>Find me in app/views/building/edit.html.erb</p> %>
+
+<h1>Editando edificio <%= @building.nombre_edificio %> </h1>
+<%= form_for(@building , :url => buildings_create_path , :method => "post") do |f| %>
+<%= f.label :nombre_edificio %>
+<%= f.text_field :nombre_edificio %>
+<br>
+<%= f.label :direccion %>
+<%= f.text_field :direccion %>
+<br>
+<%= f.label :ciudad %>
+<%= f.text_field :ciudad %>
+<%= f.submit "Editar Edificio" %>
+<% end %>
+
+ <%= link_to "Ver Todos Los Edificios", buildings_index_path %>

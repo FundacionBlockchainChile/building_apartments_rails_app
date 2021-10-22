@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   delete 'apartments/:id' => "apartment#delete"
   # buildings
   get 'buildings/index' => "building#index"
-  get 'buildings/show' => "building#new"
-  get 'buildings/new' => "building#create"
-  post 'buildings/create' => "building#show"
-  patch 'buildings/edit' => "building#update"
-  delete 'buildings/delete' => "building#destroy"
+  get 'buildings/new' => "building#new"
+  post 'buildings/create' => "building#create"
+  get 'buildings/show' => "building#show"
+  get 'buildings/edit' => "building#edit"
+  patch 'buildings/:id' => "building#update"
+  delete 'buildings/:id' => "building#delete"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,9 +1,20 @@
-<h1>Building#index</h1>
-<p>Find me in app/views/building/index.html.erb</p>
-
 <h1>Lista de Edificios</h1>
-<ul>
+
+<table>
+  <tr>
+    <th>Nombre Edificio</th>
+    <th>Direccion</th>
+    <th>Ciudad</th>
+  </tr>
   <% @buildings.each do |building| %>
-    <li><%= "El Edificio nombre #{building.nombre_edificio} direccion #{building.direccion} de la ciudad de #{building.ciudad}"   %></li>
+    <tr>
+      <td><%= building.nombre_edificio %></td>
+      <td><%= building.direccion %></td>
+      <td><%= building.ciudad %></td>
+      <td><%= link_to "Editar", buildings_edit_path(building) %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
+
+  <%= link_to "Crear nuevo Edificio", buildings_new_path %>
+  <%= link_to "Back", :back %>

@@ -1,2 +1,16 @@
 <h1>Apartment#edit</h1>
 <p>Find me in app/views/apartment/edit.html.erb</p>
+
+<% link_to "Regresar al Inicio", apartments_index%>
+
+<h1>Edit your Apartment</h1>
+
+<%= form_for(@apartment , :url => apartments_create_path , :method => "post") do |f| %>
+<%= f.label :numero_depto %>
+<%= f.text_field :numero_depto %>
+<br>
+<%= f.label :building_id %>
+<%= f.text_field :building_id %>
+<br>
+<%= f.submit "Crear Apartment" %>
+<% end %>

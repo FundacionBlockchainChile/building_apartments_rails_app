@@ -2,7 +2,7 @@
 <p>Find me in app/views/apartment/new.html.erb</p> %>
 
 <h1>Creando un nuevo Apartment</h1>
-<%= form_for(@apartment , :url => apartment_create_path , :method => "post") do |f| %>
+<%= form_for(@apartment , :url => apartments_create_path , :method => "post") do |f| %>
 <%= f.label :numero_depto %>
 <%= f.text_field :numero_depto %>
 <br>

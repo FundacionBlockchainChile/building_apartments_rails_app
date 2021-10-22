@@ -2,7 +2,7 @@
 <p>Find me in app/views/building/new.html.erb</p> %>
 
 <h1>Creando un nuevo edificio</h1>
-<%= form_for(@building , :url => building_create_path , :method => "post") do |f| %>
+<%= form_for(@building , :url => buildings_create_path , :method => "post") do |f| %>
 <%= f.label :nombre_edificio %>
 <%= f.text_field :nombre_edificio %>
 <br>
@@ -13,3 +13,5 @@
 <%= f.text_field :ciudad %>
 <%= f.submit "Crear Edificio" %>
 <% end %>
+
+ <%= link_to "Ver Todos Los Edificios", buildings_index_path %>

@@ -15,7 +15,7 @@ class ApartmentController < ApplicationController
     @apartment = Apartment.new(apartment_params())
     if @apartment.save
       p 'Apartment saved!!'
-      redirect_to(apartment_index_path)
+      redirect_to(apartments_index_path)
     else
       p 'Apartment not saved!!'
       render("new")
